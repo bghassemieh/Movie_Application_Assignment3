@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Movie_Application_Assignment3</string>
+    <string name="btn_mainActivity_addRecord">ADD RECORD</string>
+    <string name="tbBtn_mainAvtivity_ShowHide_deletedItems" />
+    <string name="show_deleted_items">Show Deleted Items</string>
+    <string name="hide_deleted_items">Hide Deleted Items</string>
+    <string name="title_activity_add__record">Add Record</string>
+    <string name="edTxt_addRecord_movieName">Movie Name</string>
+    <string name="btn_addRecord_save">Save</string>
+    <string name="btn_addRecord_Cancel">Cancel</string>
+    <string name="txt_movieRow_ID">Movie Record ID:</string>
+    <string name="txt_movieRow_showID">ID show</string>
+    <string name="txt_movieRow_movieName">Movie Name:</string>
+    <string name="txt_movieRow_showDescription" />
+    <string name="txt_movieRow_showName">Show Name:</string>
+    <string name="txt_movieRow_Description">Description:</string>
+    <string name="txt_movieRow_rating">Rating:</string>
+</resources>
