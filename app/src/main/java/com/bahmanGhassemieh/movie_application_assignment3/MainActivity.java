@@ -24,18 +24,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RecyclerView recycle = findViewById(R.id.recyclerMovie);
-        movieAdapter = new MovieAdapter(movieList);
-
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
-        recycle.setLayoutManager(layoutManager);
-        recycle.setItemAnimator(new DefaultItemAnimator());
-        recycle.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
-
-        DBClass db = new DBClass(this);
-
-        recycle.setAdapter(movieAdapter);
-
 
         Button btn_addRecord = findViewById(R.id.btn_mainActivity_addRecord);
 
@@ -53,29 +41,6 @@ public class MainActivity extends AppCompatActivity {
     onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 1 && resultCode == RESULT_OK) {
 
-            movieList.clear();
-
-            RecyclerView recycle = findViewById(R.id.recyclerMovie);
-            movieAdapter = new MovieAdapter(movieList);
-
-            DBClass db = new DBClass(this);
-            movieList.addAll(db.getMovies());
-            recycle.setAdapter(movieAdapter);
-
-            Toast.makeText(getApplicationContext(), "Record Added"
-                    , Toast.LENGTH_LONG).show();
-            movieAdapter.notifyDataSetChanged();
-        }
-
-        if (requestCode == 1 && resultCode == RESULT_CANCELED) {
-
-            Toast.makeText(getApplicationContext(), "Cancelled"
-                    , Toast.LENGTH_LONG).show();
-
-            movieAdapter.notifyDataSetChanged();
-
-        }
     }
 }
