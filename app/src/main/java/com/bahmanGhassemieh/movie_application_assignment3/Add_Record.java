@@ -38,7 +38,16 @@ public class Add_Record extends AppCompatActivity {
                 dbClass.addRecord(movie);
                 Intent data = new Intent();
                 setResult(RESULT_OK, data);
-                Add_Record.this.finish();
+                finish();
+            }
+        });
+
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent data = new Intent();
+                setResult(RESULT_CANCELED, data);
+                finish();
             }
         });
     }

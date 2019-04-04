@@ -1,8 +1,9 @@
 package com.bahmanGhassemieh.movie_application_assignment3;
 
+
 import java.io.Serializable;
 
-public class Movie implements Serializable {
+public class Movie implements Serializable{
 
     public static final String TABLE_NAME = "movie";
 
@@ -20,11 +21,11 @@ public class Movie implements Serializable {
                     COLUMN_RATING + " FLOat," +
                     COLUMN_ACTIVE + " INTEGER)";
 
-    private int movieId;
-    private String movie_name;
-    private String movie_description;
-    private float movie_rating;
-    private boolean movie_active_flag;
+   private int movieId;
+   private String movie_name;
+   private String movie_description;
+   private float movie_rating;
+   private boolean movie_active_flag;
 
     public Movie(String movie_name, String movie_description, float movie_rating, boolean movie_active_flag) {
         this.movie_name = movie_name;

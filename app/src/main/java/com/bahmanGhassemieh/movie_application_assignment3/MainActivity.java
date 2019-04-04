@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         recycle.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
 
         DBClass db = new DBClass(this);
-        movieList.addAll(db.getMovies());
+
         recycle.setAdapter(movieAdapter);
 
 
@@ -53,5 +53,29 @@ public class MainActivity extends AppCompatActivity {
     onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+
+            movieList.clear();
+
+            RecyclerView recycle = findViewById(R.id.recyclerMovie);
+            movieAdapter = new MovieAdapter(movieList);
+
+            DBClass db = new DBClass(this);
+            movieList.addAll(db.getMovies());
+            recycle.setAdapter(movieAdapter);
+
+            Toast.makeText(getApplicationContext(), "Record Added"
+                    , Toast.LENGTH_LONG).show();
+            movieAdapter.notifyDataSetChanged();
+        }
+
+        if (requestCode == 1 && resultCode == RESULT_CANCELED) {
+
+            Toast.makeText(getApplicationContext(), "Cancelled"
+                    , Toast.LENGTH_LONG).show();
+
+            movieAdapter.notifyDataSetChanged();
+
+        }
     }
 }
